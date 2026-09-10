@@ -266,7 +266,9 @@
     }
 
     function deleteNotification(id) {
+      alert(id, updatedList);
       updatedList.splice(id, 1);
+      alert(id, updatedList);
       resetForm();
       syncToCloud(updatedList);
     }
