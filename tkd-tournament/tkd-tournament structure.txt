@@ -1,5 +1,0 @@
-tkd-tournament/
-├── package.json
-├── server.js
-└── public/
-    └── index.html
