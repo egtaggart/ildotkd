@@ -276,7 +276,7 @@
     // --- AUTHENTICATION ---
     function toggleAuthModal() {
       if (isAdmin) {
-        // isAdmin = false;
+        isAdmin = false;
         //localStorage.removeItem('tkd_admin_auth');
         document.getElementById('login-modal').classList.toggle('hidden');
         updateAdminUI();
@@ -297,6 +297,7 @@
         // localStorage.setItem('tkd_admin_auth', 'true');
         document.getElementById('admin-password').value = '';
         toggleAuthModal();
+        isAdmin = true;
         updateAdminUI();
         renderFeed();
       } else {
