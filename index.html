@@ -276,11 +276,15 @@
     // --- AUTHENTICATION ---
     function toggleAuthModal() {
       if (isAdmin) {
+        //isAdmin = true;
+        //localStorage.removeItem('tkd_admin_auth');
+        updateAdminUI();
+        renderFeed();
+      } else {
         isAdmin = false;
         localStorage.removeItem('tkd_admin_auth');
         updateAdminUI();
         renderFeed();
-      } else {
         document.getElementById('login-modal').classList.toggle('hidden');
       }
     }
