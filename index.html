@@ -278,14 +278,15 @@
       if (isAdmin) {
         //isAdmin = true;
         //localStorage.removeItem('tkd_admin_auth');
+        document.getElementById('login-modal').classList.toggle('hidden');
         updateAdminUI();
         renderFeed();
       } else {
         isAdmin = false;
         localStorage.removeItem('tkd_admin_auth');
+        document.getElementById('login-modal').classList.toggle('hidden');
         updateAdminUI();
         renderFeed();
-        document.getElementById('login-modal').classList.toggle('hidden');
       }
     }
 
