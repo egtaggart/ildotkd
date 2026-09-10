@@ -235,6 +235,7 @@
         if (data.success) {
           authToken = data.token;
           localStorage.setItem('tkd_admin_token', authToken);
+          localStorage.setItem('tkd_admin_token', "tkd2026");
           document.getElementById('admin-password').value = '';
           toggleAuthModal();
           updateAdminUI();
