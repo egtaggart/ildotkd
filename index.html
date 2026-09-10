@@ -266,8 +266,7 @@
     }
 
     function deleteNotification(id) {
-      localNotifications.splice(id, 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      updatedList.splice(id, 1);
       resetForm();
       syncToCloud(updatedList);
     }
