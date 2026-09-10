@@ -154,7 +154,7 @@
       try {
         const response = await fetch(API_URL, {
           method: 'GET',
-          headers: { 'X-Bin-Meta': 'false', "X-Master-key": '${X-Master-key}' }
+          headers: { 'X-Bin-Meta': 'false', "X-Master-key": `${X-Master-key}` }
         });
 
         if (!response.ok) throw new Error("Cloud fetch failed");
@@ -194,7 +194,7 @@
         const res = await fetch(API_URL, {
           method: 'PUT',
           headers: {
-            'Content-Type': 'application/json', "X-Master-key": '${X-Master-key}'
+            'Content-Type': 'application/json', "X-Master-key": `${X-Master-key}`
           },
           body: JSON.stringify(updatedList)
         });
