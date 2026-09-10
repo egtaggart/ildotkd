@@ -276,14 +276,14 @@
     // --- AUTHENTICATION ---
     function toggleAuthModal() {
       if (isAdmin) {
-        //isAdmin = true;
+        isAdmin = false;
         //localStorage.removeItem('tkd_admin_auth');
         document.getElementById('login-modal').classList.toggle('hidden');
         updateAdminUI();
         renderFeed();
       } else {
-        isAdmin = false;
-        localStorage.removeItem('tkd_admin_auth');
+        // isAdmin = false;
+        // localStorage.removeItem('tkd_admin_auth');
         document.getElementById('login-modal').classList.toggle('hidden');
         updateAdminUI();
         renderFeed();
@@ -294,12 +294,11 @@
       const pwd = document.getElementById('admin-password').value;
       if (pwd === ADMIN_PASSWORD) {
         isAdmin = true;
-        localStorage.setItem('tkd_admin_auth', 'true');
+        // localStorage.setItem('tkd_admin_auth', 'true');
         document.getElementById('admin-password').value = '';
         toggleAuthModal();
         updateAdminUI();
         renderFeed();
-        alert("Login successful.");
       } else {
         alert("Incorrect password.");
       }
