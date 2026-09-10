@@ -94,8 +94,9 @@
     const ADMIN_PASSWORD = "tkd2026"; 
     
     // Configured for JSONBin.io V3 Public Storage API
-    const BIN_ID = "6aa307c0ffd5d16053f7939a"; // Replace with your own Bin ID if hosting permanently
-    const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+    const BIN_ID = "6aa30ec9ac6210605abe1147"; // Replace with your own Bin ID if hosting permanently
+    const API_URL = 'https://api.jsonbin.io/v3/b/${BIN_ID}';
+    const X-Master-Key = "$2a$10$NrzeLEftdEjHj8T/bpGNr.hOqJZ.U61NSqg3vscdE.m5hRtYnbAH."; // ${X-Master-Key}
 
     // --- APP STATE ---
     let isAdmin = localStorage.getItem('tkd_admin_auth') === 'true';
@@ -153,7 +154,7 @@
       try {
         const response = await fetch(API_URL, {
           method: 'GET',
-          headers: { 'X-Bin-Meta': 'false' }
+          headers: { 'X-Bin-Meta': 'false', "X-Master-Key": '{X-Master-Key}' }
         });
 
         if (!response.ok) throw new Error("Cloud fetch failed");
