@@ -95,8 +95,8 @@
     
     // Configured for JSONBin.io V3 Public Storage API
     const BIN_ID = "6aa30ec9ac6210605abe1147"; // Replace with your own Bin ID if hosting permanently
-    const API_URL = 'https://api.jsonbin.io/v3/b/${BIN_ID}';
-    const X-Master-key = "$2a$10$NrzeLEftdEjHj8T/bpGNr.hOqJZ.U61NSqg3vscdE.m5hRtYnbAH."; // ${X-Master-key}
+    const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+    const X_MASTER_KEY = "$2a$10$NrzeLEftdEjHj8T/bpGNr.hOqJZ.U61NSqg3vscdE.m5hRtYnbAH."; // ${X_Master_key}
 
     // --- APP STATE ---
     let isAdmin = localStorage.getItem('tkd_admin_auth') === 'true';
@@ -154,7 +154,7 @@
       try {
         const response = await fetch(API_URL, {
           method: 'GET',
-          headers: { 'X-Bin-Meta': 'false', "X-Master-key": `${X-Master-key}` }
+          headers: { 'X-Bin-Meta': 'false', "X-Master-key": `${X_MASTER_KEY}` }
         });
 
         if (!response.ok) throw new Error("Cloud fetch failed");
@@ -194,7 +194,7 @@
         const res = await fetch(API_URL, {
           method: 'PUT',
           headers: {
-            'Content-Type': 'application/json', "X-Master-key": `${X-Master-key}`
+            'Content-Type': 'application/json', "X-Master-key": `${X_MASTER_KEY}`
           },
           body: JSON.stringify(updatedList)
         });
