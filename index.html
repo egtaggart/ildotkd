@@ -266,6 +266,7 @@
     }
 
     function deleteNotification(id) {
+      let updatedList = [...localNotifications];
       alert(id, updatedList);
       updatedList.splice(id, 1);
       alert(id, updatedList);
