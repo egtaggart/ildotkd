@@ -266,11 +266,13 @@
     }
 
     function deleteNotification(id) {
-      let updatedList = [...localNotifications];
-      alert(id, updatedList);
-      updatedList.splice(id, 1);
-      alert(id, updatedList);
+      //let updatedList = [...localNotifications];
+      alert('ID: ${id} - updatedList: ${localNotifications}`);
+      localNotifications.splice(id, 1);
+      alert('ID: ${id} - updatedList: ${localNotifications}`);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       resetForm();
+      let updatedList = [...localNotifications];
       syncToCloud(updatedList);
     }
     
