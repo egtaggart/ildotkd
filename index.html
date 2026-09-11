@@ -271,7 +271,6 @@
       const dataArray = JSON.parse(JSON.stringify(localNotifications));
       const index = dataArray.findIndex(item => item.id === id);
       localNotifications.splice(index, 1);
-      alert(`List: ${JSON.stringify(localNotifications)}`);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       resetForm();
       let updatedList = [...localNotifications];
