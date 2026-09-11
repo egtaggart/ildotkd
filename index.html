@@ -207,7 +207,7 @@
         renderFeed();
         playChime();
       } catch (e) {
-        alert("Failed to sync changes to the cloud. Check internet connection.");
+        alert("Failed to sync changes to the cloud. Check internet connection."+e);
       }
     }
 
@@ -270,10 +270,7 @@
     function deleteNotification(id) {
       const dataArray = JSON.parse(JSON.stringify(localNotifications));
       const index = dataArray.findIndex(item => item.id === id);
-      alert(`Before - ID: ${id} Index: ${index} ${dataArray}`);
-      alert(JSON.stringify(localNotifications, null, 2));  
       localNotifications.splice(index, 1);
-      alert(JSON.stringify(localNotifications, null, 2));
       window.scrollTo({ top: 0, behavior: 'smooth' });
       resetForm();
       let updatedList = [...localNotifications];
