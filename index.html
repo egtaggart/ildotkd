@@ -265,13 +265,13 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function deleteNotification(id) {
+    function deleteNotification(item) {
       //let updatedList = [...localNotifications];
-      alert(`Before - ID: ${id} - updatedList: ${localNotifications}`);
+      alert(`Before - ID: ${item.id} - updatedList: ${localNotifications}`);
       alert(`Item: ${item}`);
       alert(JSON.stringify(localNotifications, null, 2));
       localNotifications.splice(id, 1);
-      alert(`After - ID: ${id} - updatedList: ${localNotifications}`);
+      alert(`After - ID: ${item.id} - updatedList: ${localNotifications}`);
       alert(JSON.stringify(localNotifications, null, 2));
       window.scrollTo({ top: 0, behavior: 'smooth' });
       resetForm();
