@@ -268,6 +268,7 @@
     function deleteNotification(id) {
       //let updatedList = [...localNotifications];
       alert(`Before - ID: ${id} - updatedList: ${localNotifications}`);
+      alter(`Item: ${item}`);
       alert(JSON.stringify(localNotifications, null, 2));
       localNotifications.splice(id, 1);
       alert(`After - ID: ${id} - updatedList: ${localNotifications}`);
