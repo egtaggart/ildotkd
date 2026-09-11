@@ -265,13 +265,14 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function deleteNotification(item) {
-      //let updatedList = [...localNotifications];
-      alert(`Before - ID: ${item.id} - updatedList: ${localNotifications}`);
-      alert(`Item: ${item}`);
+    function deleteNotification(id) {
+      const dataArray = JSON.parse(localNotifications);
+      const index = dataArray.findIndex(item => item.id === id);
+      alert(`Before - ID: ${id} Index: ${index}`);
       alert(JSON.stringify(localNotifications, null, 2));
-      localNotifications.splice(id, 1);
-      alert(`After - ID: ${item.id} - updatedList: ${localNotifications}`);
+      
+      localNotifications.splice(index, 1);
+
       alert(JSON.stringify(localNotifications, null, 2));
       window.scrollTo({ top: 0, behavior: 'smooth' });
       resetForm();
@@ -367,7 +368,7 @@
                 <button onclick="editNotification('${item.id}')" class="text-xs font-bold text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 px-2.5 py-1 rounded transition">
                   Edit
                 </button>
-                <button onclick="deleteNotification('${item}')" class="text-xs font-bold text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 px-2.5 py-1 rounded transition">
+                <button onclick="deleteNotification('${item.id}')" class="text-xs font-bold text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100 px-2.5 py-1 rounded transition">
                   Delete
                 </button>
               </div>
