@@ -268,8 +268,7 @@
     }
 
     function deleteNotification(id) {
-      const dataArray = JSON.parse(localNotifications);
-      // 2. Use findIndex to match the property
+      const dataArray = JSON.parse(JSON.stringify(localNotifications));
       const index = dataArray.findIndex(item => item.id === id);
       alert(`Before - ID: ${id} Index: ${index} ${dataArray}`);
       alert(JSON.stringify(localNotifications, null, 2));  
