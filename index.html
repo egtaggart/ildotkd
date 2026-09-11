@@ -266,13 +266,11 @@
     }
 
     function deleteNotification(id) {
-      const dataArray = JSON.parse(localNotifications);
-      const index = dataArray.findIndex(item => item.id === id);
+      const index = localNotifications.find(n => n.id === id);
+      if (!index) return;
       alert(`Before - ID: ${id} Index: ${index}`);
-      alert(JSON.stringify(localNotifications, null, 2));
-      
+      alert(JSON.stringify(localNotifications, null, 2));  
       localNotifications.splice(index, 1);
-
       alert(JSON.stringify(localNotifications, null, 2));
       window.scrollTo({ top: 0, behavior: 'smooth' });
       resetForm();
